@@ -1,0 +1,38 @@
+POST http://127.0.0.1:4000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Admin User",
+  "email": "admin@test.com",
+  "password": "123456",
+  "role": "admin"
+}
+
+### Login (POST)
+POST http://127.0.0.1:4000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@test.com",
+  "password": "123456"
+}
+
+### Get Posts (GET)
+GET http://127.0.0.1:4000/api/posts
+Accept: application/json
+
+### Get single post (replace :id)
+GET http://127.0.0.1:4000/api/posts/{{postId}}
+Accept: application/json
+
+### Create Post (ADMIN) - NOTE: REST Client can't upload files (use Postman / Hoppscotch/Insomnia for multipart)
+POST http://127.0.0.1:4000/api/posts
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Test post from REST Client",
+  "body": "This client can't upload files. Use Postman for images.",
+  "type": "announcement",
+  "tags": ["test","restclient"]
+}
