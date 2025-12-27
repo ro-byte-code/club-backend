@@ -10,4 +10,3 @@ Express + MongoDB backend with JWT auth and Cloudinary for image uploads.
 4. Create an admin user via `/api/auth/register` then set `role: 'admin'` in DB or add a seed.
 5. Use Postman or frontend to POST `/api/posts` with form-data (image field name: `image`).
 
-"# club-backend" 
